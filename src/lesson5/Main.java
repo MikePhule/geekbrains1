@@ -1,8 +1,18 @@
 package lesson5;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
 
+        employeeTask();
+
+        System.out.println();
+
+        funWithMatrix();
+    }
+
+    private static void employeeTask() {
         Employee[] employees = new  Employee[5];
         employees[0] = new Employee("Ivanov Ivan","CEO", "whocares@nowhere.com","+7callme",10000000,65);
         employees[1] = new Employee("Ivanov Oleg","Manager", "whocares@nowhere.com","+7notcallme",200000,25);
@@ -13,5 +23,15 @@ public class Main {
         for (Employee employee : employees) {
             if (employee.getAge() > 40) employee.info();
         }
+    }
+
+    private static void funWithMatrix() {
+        Random random = new Random();
+        int sizeX = random.nextInt(3) + 5;
+        int sizeY = random.nextInt(3) + 5;
+
+        Matrix matrix = new Matrix(sizeX,sizeY);
+        matrix.spiralFill();
+        matrix.print();
     }
 }
